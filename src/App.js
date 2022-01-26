@@ -6,6 +6,7 @@ import Register from "./Components/Login/Register";
 import Login from "./Components/Login/Login";
 import { AuthProvider } from "./AuthProvider/AuthProvider";
 import BlogDetails from "./Components/BlogDetails/BlogDetails";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='services/:serviceId' element={<BlogDetails />} />
         </Routes>
+        <Footer></Footer>
       </BrowserRouter>
       </AuthProvider>
     </div>
