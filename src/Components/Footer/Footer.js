@@ -24,7 +24,7 @@ const Footer = () => {
             <Grid item xs={12} sm={6} md={3} lg={3}>
               <div className="logo">
                 <h1>Sun <span>Tour</span></h1>
-                <p>This is powered by sun tour
+                <p>This is powered by sun tour and it's a really great tour for you.
                 </p>
               </div>
             </Grid>
