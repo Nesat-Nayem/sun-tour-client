@@ -7,7 +7,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 // import useAuth from '../../hooks/useAuth';
 import useAuth from '../hooks/useAuth'
 
-const imgUrl = 'https://i.postimg.cc/yYxVcWns/login.jpg'
+const imgUrl = 'https://i.ibb.co/rQThyv8/slider1.jpg'
 const styles = {
   paperContainer: {
     backgroundImage: `url(${imgUrl})`,
