@@ -59,7 +59,7 @@ const Slider = () => {
           <SwiperSlide className='overlay'>
             <img style={{ width: "100%" }} src="https://i.ibb.co/HY9YRyy/sun-tour-1.jpg" alt='' />
             <div className='slider-text'>
-              <h1>Get a Great Refreshment By Visiting <br /> <span>The Sky Star</span></h1>
+              <h1>Get a Great Refreshment By Visiting <br /> <span>The Sun Tour</span></h1>
               {/* <div style={{ marginTop: "20px" }} className="hero-btn">
                 <HashLink to='/home#services'>
                   <Button style={styles.primary} variant="contained">Book Now</Button>
@@ -84,7 +84,7 @@ const Slider = () => {
           <SwiperSlide className='overlay'>
             <img style={{ width: "100%" }} src="https://i.ibb.co/3vwMC50/sun-tour-3.jpg" alt='' />
             <div className='slider-text'>
-              <h1>Get a Great Refreshment By Visiting <br /> <span>The Sky Star</span></h1>
+              <h1>Get a Great Refreshment By Visiting <br /> <span>The Sun Tour</span></h1>
               {/* <div style={{ marginTop: "20px" }} className="hero-btn">
                 <HashLink to='/home#services'>
                   <Button style={styles.primary} variant="contained">Book Now</Button>
