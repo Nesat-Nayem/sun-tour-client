@@ -18,8 +18,8 @@ const AppBar = () => {
          <ul>
      
            
-            <li><a href="#">Posts</a></li>
-            <li><a href="#">Dashboard</a></li>
+            <li><NavLink to="/">Posts</NavLink></li>
+            <li><NavLink to="/">Dashboard</NavLink></li>
 
              {
             !user.email ? <ul className='login-regi'>

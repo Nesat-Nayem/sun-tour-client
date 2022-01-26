@@ -5,6 +5,7 @@ import { Route } from "react-router-dom";
 import Register from "./Components/Login/Register";
 import Login from "./Components/Login/Login";
 import { AuthProvider } from "./AuthProvider/AuthProvider";
+import BlogDetails from "./Components/BlogDetails/BlogDetails";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
+          <Route path='services/:serviceId' element={<BlogDetails />} />
         </Routes>
       </BrowserRouter>
       </AuthProvider>

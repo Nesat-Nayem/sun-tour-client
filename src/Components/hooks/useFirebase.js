@@ -7,7 +7,6 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   onAuthStateChanged,
-  
   updateProfile,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
@@ -122,7 +121,7 @@ const useFirebase = () => {
   // save user info into database
   // const userInfoSaveDB = (email, displayName, method) => {
   //     const user = { email, displayName }
-  //     fetch('https://secure-falls-75626.herokuapp.com/users', {
+  //     fetch('http://localhost:5000/users', {
   //       method: method,
   //       headers: {
   //         'content-type': 'application/json'
@@ -136,7 +135,7 @@ const useFirebase = () => {
 
   // get admin
   //   useEffect(() => {
-  //     fetch(`https://secure-falls-75626.herokuapp.com/users/${user?.email}`)
+  //     fetch(`http://localhost:5000/users/${user?.email}`)
   //       .then(res => res.json())
   //       .then(data => setAdmin(data.admin))
   //   }, [user?.email])
