@@ -18,8 +18,8 @@ const AppBar = () => {
            
             <li><a href="#">Posts</a></li>
             <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Log In</a></li>
-            <li><a href="#">Log Out</a></li>
+            <li><a href="#">Sin In</a></li>
+            <li><a href="#">Sing Up</a></li>
          </ul>
       </nav>
      

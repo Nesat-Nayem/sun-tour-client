@@ -14,7 +14,7 @@ import { useEffect, useState } from "react";
 
 initializeAuthentication();
 const auth = getAuth();
-const googleProvider = GoogleAuthProvider();
+const googleProvider = new GoogleAuthProvider();
 
 const useFirebase = () => {
   const [user, setUser] = useState({});
