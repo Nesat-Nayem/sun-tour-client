@@ -6,8 +6,10 @@ const Home = () => {
     return (
         <div>
            <AppBar></AppBar>
+       
            <Slider></Slider>
            <Services></Services>
+           
         </div>
     );
 };

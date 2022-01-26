@@ -10,13 +10,6 @@ import "swiper/css/pagination"
 
 import "./Slider.css"
 
-//image
-// import banner1 from '../../images/banner/1.jpg'
-// import banner2 from '../../images/banner/2.jpg'
-// import banner3 from '../../images/banner/3.jpg'
-// import banner4 from '../../images/banner/4.jpg'
-
-
 import SwiperCore, {
     EffectFade, Navigation, Autoplay
   } from 'swiper';
