@@ -1,4 +1,4 @@
-import { Button, TextField, Typography } from '@mui/material';
+import { Button, FormControl, InputLabel, MenuItem, Select, TextField, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -23,6 +23,13 @@ const AddProduct = () => {
 
   const [data, setData] = useState({})
 
+  // costom check
+  // const [age, setAge] = React.useState('');
+
+  // const handleChange = (event) => {
+  //   setData(event.target.value);
+  // };
+  // costom check
 
   const getServiceData = (e) => {
     const value = e.target.value
@@ -46,9 +53,17 @@ const AddProduct = () => {
       <form onSubmit={handleSubmit} style={{ width: "90%", maxWidth: "500px" }}>
         <TextField
           sx={{ my: 1 }}
-          fullWidth label="Service Name"
+          fullWidth label="Your Name"
           id="fullWidth"
           name='name'
+          onChange={getServiceData}
+          required
+        />
+        <TextField
+          sx={{ my: 1 }}
+          fullWidth label="Post Title"
+          id="fullWidth"
+          name='title'
           onChange={getServiceData}
           required
         />
@@ -63,7 +78,7 @@ const AddProduct = () => {
         <TextField
           sx={{ my: 1 }}
           type='number'
-          fullWidth label="Price"
+          fullWidth label="Travel Cost"
           id="fullWidth"
           name='price'
           onChange={getServiceData}
@@ -81,7 +96,32 @@ const AddProduct = () => {
           onChange={getServiceData}
           required
         />
-        <Button style={styles.primary} type='submit' variant="contained">Add Item</Button>
+
+        {/* costom */}
+
+        <InputLabel id="demo-simple-select-autowidth-label">Catagore</InputLabel>
+        <Select
+          labelId="demo-simple-select-autowidth-label"
+          id="demo-simple-select-autowidth"
+          // value={age}
+          name='catagory'
+          onChange={getServiceData}
+          autoWidth
+          sx={{ my: 1 }}
+          rows={4}
+          multiline
+          fullWidth
+          label="catagore"
+        >
+          
+          <MenuItem value={"new"}>New</MenuItem>
+          <MenuItem value={"trending"}>Trending</MenuItem>
+          <MenuItem value={"cool"}>Cool</MenuItem>
+        </Select>
+
+
+        {/* costom */}
+        <Button style={styles.primary} type='submit' variant="contained">Post</Button>
       </form>
     </Box>
   );

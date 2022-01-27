@@ -33,12 +33,12 @@ const Dashboard = (props) => {
             <Box>
               <NavLink to='AllOrder'>
                 <ListItem sx={{ fontSize: "20px", color: "#333" }}>
-                  All Order
+                User Post
                 </ListItem>
               </NavLink>
               <NavLink to='addservice'>
                 <ListItem sx={{ fontSize: "20px", color: "#333" }}>
-                  Add Service
+                  Add A Post
                 </ListItem>
               </NavLink>
 
@@ -49,7 +49,7 @@ const Dashboard = (props) => {
               </NavLink>
               <NavLink to='allservice'>
                 <ListItem sx={{ fontSize: "20px", color: "#333" }}>
-                  All Services
+                  All Post
                 </ListItem>
               </NavLink>
             </Box>
@@ -57,7 +57,7 @@ const Dashboard = (props) => {
             <Box>
               <NavLink to='MyOrder'>
                 <ListItem sx={{ fontSize: "20px", color: "#333" }}>
-                  My Order
+                  Create A Post
                 </ListItem>
               </NavLink>
               <NavLink to='addreview'>

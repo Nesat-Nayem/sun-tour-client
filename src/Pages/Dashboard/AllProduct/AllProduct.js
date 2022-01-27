@@ -46,15 +46,15 @@ const AllProduct = () => {
   return (
     <div>
       <Container>
-        <h3>All Services {services.length}</h3>
+        <h3>All Blogs {services.length}</h3>
 
         <TableContainer component={Paper}>
           <Table aria-label="simple table">
             <TableHead>
               <TableRow>
                 <TableCell>#</TableCell>
-                <TableCell>Product</TableCell>
-                <TableCell>Price</TableCell>
+                <TableCell>Title</TableCell>
+                <TableCell>Total Cost</TableCell>
                 <TableCell>Action</TableCell>
               </TableRow>
             </TableHead>
