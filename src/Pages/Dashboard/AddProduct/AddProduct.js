@@ -84,6 +84,14 @@ const AddProduct = () => {
           onChange={getServiceData}
           required
         />
+        <TextField
+                  sx={{ my: 1 }}
+                  fullWidth label="Location"
+                  id="fullWidth"
+                  onChange={getServiceData}
+                  name='location'
+                  required
+                />
 
         <TextField
           sx={{ my: 1 }}
@@ -96,6 +104,15 @@ const AddProduct = () => {
           onChange={getServiceData}
           required
         />
+
+              <TextField
+                  sx={{ my: 1 }}
+                  fullWidth label=""
+                  id="fullWidth"
+                  type='date'
+                  onChange={getServiceData}
+                  name='date'
+                />
 
         {/* costom */}
 

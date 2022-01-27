@@ -35,25 +35,8 @@ const ServiceDetails = () => {
   const [data, setData] = useState({})
 
 
-  const getServiceData = (e) => {
-    const value = e.target.value
-    const property = e.target.name
-    const newObj = { ...data }
-    newObj[property] = value
-    newObj.name = user.displayName
-    newObj.email = user.email
-    newObj.status = 'Pending'
-    newObj.price = service.price
-    newObj.serviceImg = service.img
-    newObj.serviceName = service.name
-    setData(newObj)
-  }
+ 
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    dispatch(getAddedOrder(data))
-    e.target.reset()
-  }
 
   return (
     <>
@@ -69,61 +52,7 @@ const ServiceDetails = () => {
             </Grid>
             <Grid sx={{ margin: "auto" }} item md={6}>
               <Typography variant='h4'>Book This Package Here</Typography>
-              <form onSubmit={handleSubmit}>
-                <TextField
-                  sx={{ my: 1 }}
-                  fullWidth label="name"
-                  id="fullWidth"
-                  value={user.displayName || ''}
-                  onChange={getServiceData}
-                  name='name'
-                  autoFocus
-                  disabled
-                />
-                <TextField
-                  sx={{ my: 1 }}
-                  fullWidth label="Email"
-                  id="fullWidth"
-                  type='email'
-                  value={user.email || ''}
-                  onChange={getServiceData}
-                  name='email'
-                  autoFocus
-                  disabled
-                />
-                <TextField
-                  sx={{ my: 1 }}
-                  fullWidth label="Phone Number"
-                  id="fullWidth"
-                  type='number'
-                  onChange={getServiceData}
-                  name='phone'
-                />
-                <TextField
-                  sx={{ my: 1 }}
-                  fullWidth label="Service Name"
-                  value={service.name || ''}
-                  id="fullWidth"
-                  onChange={getServiceData}
-                  name='serviceName'
-                />
-                <TextField
-                  sx={{ my: 1 }}
-                  fullWidth label="Address"
-                  id="fullWidth"
-                  onChange={getServiceData}
-                  name='address'
-                />
-                <TextField
-                  sx={{ my: 1 }}
-                  fullWidth label=""
-                  id="fullWidth"
-                  type='date'
-                  onChange={getServiceData}
-                  name='date'
-                />
-                <Button style={styles.primary} type='submit' variant="contained">Confirm Order</Button>
-              </form>
+             
             </Grid>
           </Grid>
         </Box>

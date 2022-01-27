@@ -56,7 +56,7 @@ const AllOrders = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          alert("Order Approved");
+          alert("Admin Approved");
           setIsUpdated(true);
         } else {
           setIsUpdated(false);
@@ -66,19 +66,19 @@ const AllOrders = () => {
   return (
     <div>
       <Container>
-        <h3>All Order {allOrders.length}</h3>
+        <h3>User All Posts {allOrders.length}</h3>
 
         <TableContainer component={Paper}>
           <Table aria-label="simple table">
             <TableHead>
               <TableRow>
                 <TableCell>#</TableCell>
-                <TableCell>Customer Name</TableCell>
-                <TableCell>Phone Number</TableCell>
-                <TableCell>Product</TableCell>
-                <TableCell>Price</TableCell>
+                <TableCell>Poster Name</TableCell>
+                {/* <TableCell>Phone Number</TableCell> */}
+                <TableCell>Post Title</TableCell>
+                {/* <TableCell>Price</TableCell> */}
                 <TableCell>Status</TableCell>
-                <TableCell>Order Status</TableCell>
+                <TableCell>Post Status</TableCell>
                 <TableCell>Action</TableCell>
               </TableRow>
             </TableHead>
@@ -90,9 +90,9 @@ const AllOrders = () => {
                 >
                   <TableCell> {index} </TableCell>
                   <TableCell> {order.name} </TableCell>
-                  <TableCell> {order.phone} </TableCell>
-                  <TableCell> {order.serviceName} </TableCell>
-                  <TableCell> {order.price} </TableCell>
+                  {/* <TableCell> {order.phone} </TableCell> */}
+                  <TableCell> {order.Title.slice(0, 40)} ...</TableCell>
+                  {/* <TableCell> {order.price} </TableCell> */}
                   <TableCell> {order.status} </TableCell>
                   <TableCell>
                     <Button
@@ -100,7 +100,7 @@ const AllOrders = () => {
                       variant="outlined"
                       color="error"
                     >
-                      {order?.status === "Shipped" ? "Updated " : "Update"}
+                      {order?.status === "Done" ? "Updated " : "Update"}
                     </Button>
                   </TableCell>
                   <TableCell>

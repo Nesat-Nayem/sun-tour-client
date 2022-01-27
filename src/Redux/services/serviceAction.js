@@ -4,6 +4,7 @@ export const ADD_SERVICE = "ADD_SERVICE";
 export const ADD_ORDER = "ADD_ORDER";
 export const LOAD_SERVICE = "LOAD_SERVICE";
 export const ADD_REVIEW = "ADD_REVIEW";
+export const LOAD_PAGE = "LOAD_PAGE";
 export const LOAD_SINGLE_SERVICE = "LOAD_SINGLE_SERVICE";
 
 export const addService = (payload) => {
@@ -24,6 +25,16 @@ export const loadService = (payload) => {
     payload,
   };
 };
+
+// my costom
+export const pageCount = (payload) =>{
+  return{
+    type: LOAD_PAGE,
+    payload,
+  };
+};
+// my costom
+
 export const loadSingleService = (payload) => {
   return {
     type: LOAD_SINGLE_SERVICE,
@@ -69,7 +80,13 @@ export const getLoadedService = () => {
     axios
       .get("http://localhost:5000/service")
       .then((res) => {
-        dispatch(loadService(res.data));
+        console.log(res?.data?.count);
+        dispatch(loadService(res?.data?.post));
+
+        const count = res?.data?.count;
+        const pageNumber = Math.ceil(count / 10)
+        dispatch(pageCount(pageNumber));
+       
       })
       .catch((error) => {
         console.log(error.message);

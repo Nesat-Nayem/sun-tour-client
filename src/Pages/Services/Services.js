@@ -5,20 +5,25 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { Container, Grid } from '@mui/material';
+import { Container, Grid, Pagination, Stack } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux'
 import { getLoadedService } from '../../Redux/services/serviceAction'
 import { Link } from 'react-router-dom'
 
 const Services = () => {
   const services = useSelector(state => state.services.services)
+
+  // const pageNumber = useSelector(state => state.pageNumber.pageNumber)
+
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getLoadedService(services))
+    // dispatch(getLoadedService(pageNumber))
+    // console.log(pageNumber);
   }, [])
   return (
     <Container id='services'>
-      <Typography sx={{ textAlign: "center", my: 5 }} variant='h3'>Our Services</Typography>
+      <Typography sx={{ textAlign: "center", my: 5 }} variant='h3'>Popular Posts</Typography>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {
           services?.map(service => <Grid key={service._id} sx={{ margin: "auto" }} item md={4}>
@@ -31,7 +36,7 @@ const Services = () => {
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                  {service.name}
+                  {service.Title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
                   {service.desc?.slice(0, 120)}
@@ -49,6 +54,13 @@ const Services = () => {
           </Grid>)
         }
       </Grid>
+    
+    <div className="pagination">
+       {/* {
+          [...Array(pageNumber)?.keys()]
+          .map(number =><button>{number}</button>)
+       } */}
+    </div>
     </Container>
   );
 };
