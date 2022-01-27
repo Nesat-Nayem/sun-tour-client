@@ -1,0 +1,116 @@
+.logo h1{
+  font-size: 50px;
+  font-weight: 700;
+  font-family: 'Tangerine', cursive;
+}
+.logo h1 span{
+  color: #27b1fc;
+}
+.header{
+  background-color: #fff;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+}
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar nav ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar nav ul.menu{
+  gap: 20px;
+}
+.navbar nav ul.menu li a{
+  color: #333;
+  font-weight: 500;
+}
+.navbar nav ul.login-regi li a,
+.user-info button{
+  display: inline-block;
+  padding: 7px 20px;
+  background-color: #27b1fc;
+  color: #fff;
+  border-radius: 30px;
+  margin-left: 15px;
+  border: 0;
+  outline: 0;
+}
+.hambarger{
+  font-size: 20px;
+  display: none;
+  cursor: pointer;
+}
+.user-info{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-left: 15px;
+}
+.user-info button{
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.user-info h1{
+  font-size: 20px;
+  font-weight: 400;
+  color: #27b1fc;
+  border-bottom: 1px dashed #27b1fc;
+}
+.tet{
+  border-bottom: 1px dashed rgba(255, 143, 83, 0.5)
+}
+@media only screen and (max-width:768px){
+  .navbar nav ul.menu {
+    display: block;
+    position: fixed;
+    width: 100%;
+    max-width: 300px;
+    right: -300px;
+    top: 70px;
+    background-color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    transition: 0.5s ease right;
+  }
+  .navbar nav ul.menu li a{
+    font-size: 20px;
+    margin:10px 0;
+    display: block;
+  }
+  .hambarger{
+    display: block;
+  }
+  .navbar nav ul.show{
+    right: 0;
+  }
+}
+@media only screen and (max-width:450px){
+  .logo h1{
+    font-size: 30px;
+  }
+  .navbar nav ul.login-regi li a{
+    display: inline-block;
+    padding: 6px 15px;
+    background-color: #27b1fc;
+    color: #fff;
+    border-radius: 30px;
+    margin-left: 10px;
+  }
+  .navbar nav ul.menu{
+    top: 55px;
+  }
+}
