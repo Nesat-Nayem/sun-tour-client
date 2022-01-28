@@ -7,23 +7,16 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Container, Grid, Pagination, Stack } from "@mui/material";
 import "./Services.css";
-// import { useDispatch, useSelector } from "react-redux";
-import {
-  getLoadedService,
-  getLoadedPage,
-} from "../../Redux/services/serviceAction";
 import { Link } from "react-router-dom";
 import { Box, typography } from "@mui/system";
 
 const Services = () => {
-  // const services = useSelector((state) => state.services.services);
-  // console.log(services);
 
   const [posts, setPosts] = useState([])
   
   const [page, setPage] = useState(0);
   const [numberCount, setNumber] = useState(0);
-  console.log(numberCount);
+  
   const size = 10;
   useEffect(() => {
     fetch(`http://localhost:5000/service?page=${page}&&size=${size}`)
@@ -35,19 +28,7 @@ const Services = () => {
         setNumber(pageNumber);
       });
   },[page]);
-  // costom
-  // const pageNumber = useSelector(state => state.pageNumber.pageNumber)
-  // console.log(pageNumber);
-  // costom
-
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(getLoadedService(services));
-
-    // dispatch(getLoadedPage(pageNumber))
-
-    // console.log(pageNumber);
-  // }, []);
+ 
   return (
     <Container id="services">
       <Typography sx={{ textAlign: "center", my: 5 }} variant="h3">
