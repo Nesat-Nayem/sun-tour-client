@@ -1,17 +1,17 @@
-.banner .swiper{
+.banner .swiper {
   height: 100vh;
 }
-.banner .swiper .swper-slide{
+.banner .swiper .swper-slide {
   position: relative;
   width: 100%;
   height: 100%;
 }
-.overlay img{
+.overlay img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-.overlay::after{
+.overlay::after {
   content: "";
   position: absolute;
   top: 0;
@@ -20,7 +20,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.slider-text{
+.slider-text {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -29,31 +29,33 @@
   text-align: center;
   width: 100%;
 }
-.slider-text h1{
+.slider-text h1 {
   color: #fff;
   font-size: 40px;
 }
-.slider-text span{
+.slider-text span {
   color: #27b1fc;
 }
-.swiper-button-prev, .swiper-button-next{
+.swiper-button-prev,
+.swiper-button-next {
   width: 50px;
   height: 50px;
   background-color: #e006aa;
   border-radius: 50%;
   color: #fff;
 }
-.swiper-button-prev::after, .swiper-button-next::after{
+.swiper-button-prev::after,
+.swiper-button-next::after {
   font-size: 30px;
 }
 
-@media only screen and (max-width:600px) {
-  .slider-text h1{
+@media only screen and (max-width: 600px) {
+  .slider-text h1 {
     font-size: 30px;
   }
 }
-@media only screen and (max-width:500px) {
-  .slider-text h1{
+@media only screen and (max-width: 500px) {
+  .slider-text h1 {
     font-size: 25px;
   }
 }

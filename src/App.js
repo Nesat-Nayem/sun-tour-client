@@ -35,8 +35,6 @@ function App() {
               </PrivateRoute>
             }
           >
-            {/* <Route path='/dashboard' element={<Dashboard />}> */}
-
             <Route
               exact
               path="/dashboard"
@@ -46,8 +44,6 @@ function App() {
             <Route path="createAPost" element={<MyOrder />} />
 
             <Route path="addreview" element={<AddReview />} />
-
-            {/* <Route path='adAdmin' element={<AdAdmin />} /> */}
 
             <Route
               path="addAPost"

@@ -36,8 +36,7 @@ const AllProduct = () => {
         .then((result) => {
           if (result.deletedCount) {
             alert("delete success");
-            // const remaining = products.filter(product => product._id !== id);
-            // setProducts(remaining)
+
             setIsDeleted(true);
           } else {
             setIsDeleted(false);

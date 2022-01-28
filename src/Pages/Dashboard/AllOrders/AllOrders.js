@@ -14,16 +14,12 @@ import { useDispatch } from "react-redux";
 import { getAddedService } from "../../../Redux/services/serviceAction";
 const AllOrders = () => {
   const dispatch = useDispatch();
-
   const [allOrders, setAllOrders] = useState([]);
   console.log(allOrders);
   const [isDeleted, setIsDeleted] = useState(null);
   const [isUpdated, setIsUpdated] = useState(null);
   const [userPost, serUserPost] = useState({});
   const [userData, setData] = useState({});
-
-  // console.log(userPost);
-
   // get data from database
   useEffect(() => {
     fetch("https://rocky-thicket-50900.herokuapp.com/manageOrders")
@@ -45,7 +41,6 @@ const AllOrders = () => {
         .then((result) => {
           if (result.deletedCount) {
             alert("delete success");
-            // const remaining = products.filter(product => product._id !== id);
             // setProducts(remaining)
             setIsDeleted(true);
           } else {
@@ -58,14 +53,10 @@ const AllOrders = () => {
   // costom check
 
   const getServiceData = () => {
-    // const value = value
-    // const property = target.name
     const newObj = { ...userData };
-    // newObj[property] = value
+
     newObj.name = userPost.name;
     newObj.title = userPost.title;
-    // newObj.email = userPost.email
-    // newObj.status = 'Pending'
     newObj.price = userPost.price;
     newObj.location = userPost.location;
     newObj.desc = userPost.desc;
@@ -129,9 +120,9 @@ const AllOrders = () => {
               <TableRow>
                 <TableCell>#</TableCell>
                 <TableCell>Poster Name</TableCell>
-                {/* <TableCell>Phone Number</TableCell> */}
+
                 <TableCell>Post Title</TableCell>
-                {/* <TableCell>Price</TableCell> */}
+
                 <TableCell>Status</TableCell>
                 <TableCell>Post Status</TableCell>
                 <TableCell>Action</TableCell>
@@ -145,13 +136,12 @@ const AllOrders = () => {
                 >
                   <TableCell> {index} </TableCell>
                   <TableCell> {order.name} </TableCell>
-                  {/* <TableCell> {order.phone} </TableCell> */}
+
                   <TableCell> {order.title.slice(0, 40)} ...</TableCell>
-                  {/* <TableCell> {order.price} </TableCell> */}
+
                   <TableCell> {order.status} </TableCell>
                   <TableCell>
                     <Button
-                      // onClick={() => handleUpdateStatus(order?._id)}
                       onClick={() => {
                         fiendId(order?._id);
                       }}

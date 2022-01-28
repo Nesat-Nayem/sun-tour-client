@@ -37,14 +37,6 @@ const MyOrder = () => {
     newObj[property] = value;
     newObj.status = "Pending";
     setData(newObj);
-    // newObj.name = user.displayName
-    // newObj.email = user.email
-   
-    // newObj.price = service.price;
-    // newObj.serviceImg = service.img;
-    // newObj.serviceName = service.name;
-   
-    
   };
 
   return (
@@ -55,7 +47,7 @@ const MyOrder = () => {
           fullWidth
           label="Your Name"
           id="fullWidth"
-          // value={user.displayName || ''}
+        
           onChange={getServiceData}
           name="name"
           autoFocus
@@ -66,8 +58,7 @@ const MyOrder = () => {
           fullWidth
           label="Post Title"
           id="fullWidth"
-          // type='tytle'
-          // value={user.email || ''}
+          
           onChange={getServiceData}
           name="title"
           autoFocus
@@ -78,7 +69,7 @@ const MyOrder = () => {
           fullWidth
           label="Image Url"
           id="fullWidth"
-          // type='number'
+         
           name="img"
           onChange={getServiceData}
          
@@ -88,7 +79,7 @@ const MyOrder = () => {
           sx={{ my: 1 }}
           fullWidth
           label="Travel Cost"
-          // value={service.name || ''}
+         
           id="fullWidth"
           type="Number"
           onChange={getServiceData}
@@ -132,7 +123,7 @@ const MyOrder = () => {
         <Select
           labelId="demo-simple-select-autowidth-label"
           id="demo-simple-select-autowidth"
-          // value={age}
+        
           name="category"
           onChange={getServiceData}
           autoWidth
