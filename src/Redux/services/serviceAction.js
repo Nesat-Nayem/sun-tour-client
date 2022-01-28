@@ -20,6 +20,7 @@ export const addOrder = (payload) => {
   };
 };
 export const loadService = (payload) => {
+  console.log(payload);
   return {
     type: LOAD_SERVICE,
     payload,
@@ -27,12 +28,13 @@ export const loadService = (payload) => {
 };
 
 // my costom
-export const pageCount = (payload) =>{
-  return{
-    type: LOAD_PAGE,
-    payload,
-  };
-};
+// export const pageCount = (payload) => {
+//   console.log(payload);
+//   return {
+//     type: LOAD_PAGE,
+//     payload,
+//   };
+// };
 // my costom
 
 export const loadSingleService = (payload) => {
@@ -75,24 +77,46 @@ export const getAddedOrder = (order) => {
       });
   };
 };
+
 export const getLoadedService = () => {
   return (dispatch) => {
     axios
       .get("http://localhost:5000/service")
       .then((res) => {
-        console.log(res?.data?.count);
+        // console.log(res?.data?.count);
         dispatch(loadService(res?.data?.post));
 
-        const count = res?.data?.count;
-        const pageNumber = Math.ceil(count / 10)
-        dispatch(pageCount(pageNumber));
-       
+        // console.log(res.data.count);
+        // const count = res?.data?.count;
+        // const pageNumber = Math.ceil(count / 10);
+        // console.log(pageNumber);
+        // dispatch(pageCount(pageNumber));
       })
       .catch((error) => {
         console.log(error.message);
       });
   };
 };
+
+// costom check
+// export const getLoadedPage = () => {
+//   return (dispatch) => {
+//     axios
+//       .get("http://localhost:5000/service")
+//       .then((res) => {
+//         console.log(res?.data?.post);
+//         const count = res?.data?.count;
+//         const pageNumber = Math.ceil(count / 10);
+//         dispatch(pageCount(pageNumber));
+//       })
+//       .catch((error) => {
+//         console.log(error.message);
+//       });
+//   };
+// };
+
+// costom check
+
 export const getSingleService = (id) => {
   return (dispatch) => {
     axios

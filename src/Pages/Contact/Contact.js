@@ -52,7 +52,7 @@ const Contact = () => {
           </form>
         </Grid>
         <Grid item md={6}>
-          <img style={{ width: "100%" }} src="" alt="" />
+          <img style={{ width: "100%" }} src="https://i.ibb.co/yXfYXgW/Young-business-woman-working-at-the-computer-in-cafe-on-the-rock-Young-girl-downshifter-working-at-a.jpg" alt="" />
         </Grid>
       </Grid>
     </Container>

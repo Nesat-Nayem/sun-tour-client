@@ -5,10 +5,7 @@ import { ImLocation2 } from 'react-icons/im'
 
 const styles = {
   paperContainer: {
-    backgroundImage: `linear-gradient(to right, rgba(39, 177, 252, 0.5), rgba(255, 143, 83, 0.5)), url("https://i.ibb.co/rQThyv8/slider1.jpg")`,
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
+    backgroundColor:"#F999B7",
     padding: "50px 0"
   },
 }
@@ -17,14 +14,14 @@ const Footer = () => {
     <Box style={styles.paperContainer}>
       <Box className='custom-container'>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          <Grid item xs={12} sm={6} md={3} lg={3}>
+          <Grid item xs={12} sm={6} md={4} lg={4}>
             <div className="logo">
-              <h1>Sun <span>Tour</span></h1>
+              <h1>Sun Tour</h1>
               <p>Sun Tour is and organized travel agency
               </p>
             </div>
           </Grid>
-          <Grid item xs={12} sm={6} md={3} lg={3}>
+          <Grid item xs={12} sm={6} md={4} lg={4}>
             <h1 style={{ fontSize: "25px", fontWeight: "400" }}>Quick Link</h1>
             <ul>
               <li><a style={{ color: "#333", fontSize: "15px" }} href="/">Home</a></li>
@@ -35,7 +32,7 @@ const Footer = () => {
               <li><a style={{ color: "#333", fontSize: "15px" }} href="/">Terms & Service</a></li>
             </ul>
           </Grid>
-          <Grid item xs={12} sm={6} md={3} lg={3}>
+          <Grid item xs={12} sm={6} md={4} lg={4}>
             <h1 style={{ fontSize: "25px", fontWeight: "400" }}>Get In Touch</h1>
             <Box sx={{ display: "flex", alignItems: "center", gap: "5px", fontSize: "18px", my: 2 }}>
               <AiOutlineMail style={{ fontSize: "20px" }} />
@@ -50,7 +47,7 @@ const Footer = () => {
               London, Uk
             </Box>
           </Grid>
-          <Grid item xs={12} sm={6} md={3} lg={3}>
+          {/* <Grid item xs={12} sm={6} md={3} lg={3}>
             <h1 style={{ fontSize: "25px", fontWeight: "400" }}>Gallery</h1>
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: "5px" }}>
               <img style={{ width: "47%" }} src="" alt="" />
@@ -58,7 +55,7 @@ const Footer = () => {
               <img style={{ width: "47%" }} src="" alt="" />
               <img style={{ width: "47%" }} src="" alt="" />
             </Box>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Box>
     </Box>

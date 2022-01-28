@@ -3,6 +3,7 @@ import { ADD_ORDER, ADD_REVIEW,LOAD_PAGE, ADD_SERVICE, LOAD_SERVICE, LOAD_SINGLE
 const initialState = {
   loading: false,
   services: [],
+  // pageNumber:Number,
   service: {},
   orders: []
 }
@@ -22,11 +23,11 @@ const serviceReducer = (state = initialState, action) => {
       loading: false
     }
 // costom
-    case LOAD_PAGE: return {
-      ...state,
-      pageNumber: action.payload
+    // case LOAD_PAGE: return {
+    //   ...state,
+    //   pageNumber: action.payload
       
-    }
+    // }
     // constom
     case LOAD_SINGLE_SERVICE: return {
       ...state,

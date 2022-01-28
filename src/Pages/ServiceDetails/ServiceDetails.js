@@ -44,16 +44,26 @@ const ServiceDetails = () => {
       <Container>
         <Box sx={{ padding: '100px 0' }}>
           <Grid container rowSpacing={1} columnSpacing={{ md: 2 }}>
-            <Grid sx={{ margin: "auto" }} item md={6}>
+            <Grid sx={{ margin: "auto" }} item md={10}>
               <img style={{ width: "100%" }} src={service.img} alt="" />
-              <Typography variant='h4'>{service.name}</Typography>
+              <Typography sx={{color:'green', marginTop:'10px'}} variant='h4'>{service.title}</Typography>
+
+              <Typography sx={{textAlign:'right', marginBottom:'6px'}} variant='h5'>Poster: {service.name}</Typography>
+
               <Typography variant='p'>{service.desc}</Typography>
-              <Typography variant='h6'>Price: ${service.price}</Typography>
+              <Typography sx={{marginTop:'10px'}} variant='h6'>Tour Cost: ${service.price}</Typography>
+
+              <Typography sx={{marginTop:'10px', textAlign:'right'}} variant='h6'>Location: {service.location}</Typography>
+
+              <Typography sx={{marginTop:'10px'}} variant='h6'>Date: {service.date}</Typography>
+
+              <Typography sx={{marginTop:'10px', textAlign:'right'}} variant='h6'>Catagore: {service.catagory}</Typography>
+
             </Grid>
-            <Grid sx={{ margin: "auto" }} item md={6}>
+            {/* <Grid sx={{ margin: "auto" }} item md={6}>
               <Typography variant='h4'>Book This Package Here</Typography>
              
-            </Grid>
+            </Grid> */}
           </Grid>
         </Box>
       </Container>

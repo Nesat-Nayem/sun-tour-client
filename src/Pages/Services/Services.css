@@ -1,0 +1,22 @@
+/* .pageCount{
+    margin: 30px;
+}
+.pageCount button{
+    padding: 20px 30px;
+    margin-left: 10px;
+} */
+
+.pagination{
+    margin: 30px;
+}
+
+.pagination button{
+    background-color: wheat;
+    padding: 10px 20px;
+    border: none;
+    margin-left: 10px;
+}
+.pagination .selected{
+    background-color: violet;
+    color:white;
+}
