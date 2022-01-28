@@ -31,7 +31,7 @@ const Services = () => {
   }, [page]);
 
   return (
-    <Container id="services">
+    <Container id="post">
       <Typography sx={{ textAlign: "center", my: 5 }} variant="h3">
         Popular Posts
       </Typography>

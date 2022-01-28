@@ -35,13 +35,16 @@ const MyOrder = () => {
     const property = e.target.name;
     const newObj = { ...data };
     newObj[property] = value;
+    newObj.status = "Pending";
+    setData(newObj);
     // newObj.name = user.displayName
     // newObj.email = user.email
-    newObj.status = "Pending";
-    newObj.price = service.price;
-    newObj.serviceImg = service.img;
-    newObj.serviceName = service.name;
-    setData(newObj);
+   
+    // newObj.price = service.price;
+    // newObj.serviceImg = service.img;
+    // newObj.serviceName = service.name;
+   
+    
   };
 
   return (
@@ -66,18 +69,19 @@ const MyOrder = () => {
           // type='tytle'
           // value={user.email || ''}
           onChange={getServiceData}
-          name="Title"
+          name="title"
           autoFocus
           required
         />
         <TextField
           sx={{ my: 1 }}
           fullWidth
-          label="Img Url"
+          label="Image Url"
           id="fullWidth"
           // type='number'
-          onChange={getServiceData}
           name="img"
+          onChange={getServiceData}
+         
           required
         />
         <TextField
@@ -88,7 +92,7 @@ const MyOrder = () => {
           id="fullWidth"
           type="Number"
           onChange={getServiceData}
-          name="travel cost"
+          name="price"
           required
         />
         <TextField
@@ -106,7 +110,7 @@ const MyOrder = () => {
           label="Description"
           id="fullWidth"
           onChange={getServiceData}
-          name="dec"
+          name="desc"
           required
         />
 
@@ -129,14 +133,14 @@ const MyOrder = () => {
           labelId="demo-simple-select-autowidth-label"
           id="demo-simple-select-autowidth"
           // value={age}
-          name="catagory"
+          name="category"
           onChange={getServiceData}
           autoWidth
           sx={{ my: 1 }}
           rows={4}
           multiline
           fullWidth
-          label="catagore"
+          label="Category"
         >
           <MenuItem value={"new"}>New</MenuItem>
           <MenuItem value={"trending"}>Trending</MenuItem>

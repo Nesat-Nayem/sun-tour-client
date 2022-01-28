@@ -121,14 +121,14 @@ const AddProduct = () => {
           labelId="demo-simple-select-autowidth-label"
           id="demo-simple-select-autowidth"
           // value={age}
-          name='catagory'
+          name='category'
           onChange={getServiceData}
           autoWidth
           sx={{ my: 1 }}
           rows={4}
           multiline
           fullWidth
-          label="catagore"
+          label="Category"
         >
           
           <MenuItem value={"new"}>New</MenuItem>

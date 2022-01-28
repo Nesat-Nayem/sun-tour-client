@@ -20,6 +20,7 @@ const AllOrders = () => {
   const [isDeleted, setIsDeleted] = useState(null);
   const [isUpdated, setIsUpdated] = useState(null);
   const [userPost, serUserPost] = useState({});
+  const [userData, setData] = useState({});
 
   // console.log(userPost);
 
@@ -53,6 +54,29 @@ const AllOrders = () => {
         });
     }
   };
+
+  // costom check
+
+  const getServiceData = () => {
+    // const value = value
+    // const property = target.name
+    const newObj = { ...userData };
+    // newObj[property] = value
+    newObj.name = userPost.name;
+    newObj.title = userPost.title;
+    // newObj.email = userPost.email
+    // newObj.status = 'Pending'
+    newObj.price = userPost.price;
+    newObj.location = userPost.location;
+    newObj.desc = userPost.desc;
+    newObj.date = userPost.date;
+    newObj.category = userPost.category;
+    newObj.img = userPost.img;
+
+    setData(newObj);
+  };
+
+  // costom check
 
   // // update
   const handleUpdateStatus = (id) => {
@@ -90,7 +114,9 @@ const AllOrders = () => {
       .then((res) => res.json())
       .then((data) => serUserPost(data));
 
-    dispatch(getAddedService(userPost));
+    getServiceData();
+
+    dispatch(getAddedService(userData));
   };
   return (
     <div>
@@ -120,7 +146,7 @@ const AllOrders = () => {
                   <TableCell> {index} </TableCell>
                   <TableCell> {order.name} </TableCell>
                   {/* <TableCell> {order.phone} </TableCell> */}
-                  <TableCell> {order.Title.slice(0, 40)} ...</TableCell>
+                  <TableCell> {order.title.slice(0, 40)} ...</TableCell>
                   {/* <TableCell> {order.price} </TableCell> */}
                   <TableCell> {order.status} </TableCell>
                   <TableCell>

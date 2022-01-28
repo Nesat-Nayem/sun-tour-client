@@ -69,7 +69,7 @@ export const getAddedOrder = (order) => {
       .then((res) => {
         if (res.data) {
           dispatch(addOrder(res.data));
-          alert("Order Purchased Successfully");
+          alert("We Receive Your post and if admin approved show it UI");
         }
       })
       .catch((error) => {
