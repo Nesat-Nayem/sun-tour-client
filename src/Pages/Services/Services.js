@@ -11,24 +11,25 @@ import { Link } from "react-router-dom";
 import { Box, typography } from "@mui/system";
 
 const Services = () => {
+  const [posts, setPosts] = useState([]);
 
-  const [posts, setPosts] = useState([])
-  
   const [page, setPage] = useState(0);
   const [numberCount, setNumber] = useState(0);
-  
+
   const size = 10;
   useEffect(() => {
-    fetch(`http://localhost:5000/service?page=${page}&&size=${size}`)
+    fetch(
+      `https://rocky-thicket-50900.herokuapp.com/service?page=${page}&&size=${size}`
+    )
       .then((res) => res.json())
       .then((data) => {
-        setPosts(data.post)
+        setPosts(data.post);
         const count = data.count;
         const pageNumber = Math.ceil(count / size);
         setNumber(pageNumber);
       });
-  },[page]);
- 
+  }, [page]);
+
   return (
     <Container id="services">
       <Typography sx={{ textAlign: "center", my: 5 }} variant="h3">
@@ -36,7 +37,7 @@ const Services = () => {
       </Typography>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         {posts?.map((service) => (
-        // {services?.map((service) => (
+          // {services?.map((service) => (
 
           <Grid key={service._id} sx={{ margin: "auto" }} item md={4}>
             <Card sx={{ maxWidth: 345 }}>

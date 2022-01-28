@@ -13,35 +13,33 @@ import {
 import { useDispatch } from "react-redux";
 import { getAddedService } from "../../../Redux/services/serviceAction";
 const AllOrders = () => {
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const [allOrders, setAllOrders] = useState([]);
   console.log(allOrders);
   const [isDeleted, setIsDeleted] = useState(null);
   const [isUpdated, setIsUpdated] = useState(null);
-  const [userPost,serUserPost] = useState({})
+  const [userPost, serUserPost] = useState({});
 
-// console.log(userPost);
-
+  // console.log(userPost);
 
   // get data from database
   useEffect(() => {
-    fetch("http://localhost:5000/manageOrders")
+    fetch("https://rocky-thicket-50900.herokuapp.com/manageOrders")
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
-     
   }, [isDeleted, isUpdated]);
-
-  
 
   // delete
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure to Delete");
     if (proceed) {
-      fetch(`http://localhost:5000/allOrders/order/delete/${id}`, {
-        method: "DELETE",
-      })
+      fetch(
+        `https://rocky-thicket-50900.herokuapp.com/allOrders/order/delete/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((res) => res.json())
         .then((result) => {
           if (result.deletedCount) {
@@ -56,18 +54,18 @@ const AllOrders = () => {
     }
   };
 
-
   // // update
   const handleUpdateStatus = (id) => {
     // console.log(id);
-    fetch(`http://localhost:5000/orderStatus/update/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-    })
-
-   
+    fetch(
+      `https://rocky-thicket-50900.herokuapp.com/orderStatus/update/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+      }
+    )
       // .then()
 
       .then((res) => res.json())
@@ -81,22 +79,19 @@ const AllOrders = () => {
       });
   };
 
-  const fiendId = (id) =>{
-  
-     console.log(id);
-     fetch(`http://localhost:5000/manageOrders/${id}`,{
-       method:'GET',
-       headers:{ 
-         'content-type':'application/json',
-        },
-     })
+  const fiendId = (id) => {
+    console.log(id);
+    fetch(`https://rocky-thicket-50900.herokuapp.com/manageOrders/${id}`, {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => serUserPost(data));
 
-     .then(res => res.json())
-     .then(data => serUserPost(data))
-
-     dispatch(getAddedService(userPost))
-   
-  }
+    dispatch(getAddedService(userPost));
+  };
   return (
     <div>
       <Container>
@@ -118,7 +113,6 @@ const AllOrders = () => {
             </TableHead>
             <TableBody>
               {allOrders.map((order, index) => (
-                
                 <TableRow
                   key={order._id}
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
@@ -132,8 +126,8 @@ const AllOrders = () => {
                   <TableCell>
                     <Button
                       // onClick={() => handleUpdateStatus(order?._id)}
-                      onClick={()=>{
-                        fiendId(order?._id)
+                      onClick={() => {
+                        fiendId(order?._id);
                       }}
                       variant="outlined"
                       color="error"

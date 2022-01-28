@@ -20,7 +20,7 @@ const Reviews = () => {
   );
 
   useEffect(() => {
-    fetch("http://localhost:5000/reviews")
+    fetch("https://rocky-thicket-50900.herokuapp.com/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

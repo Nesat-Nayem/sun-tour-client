@@ -53,7 +53,7 @@ export const addReview = (payload) => {
 export const getAddedService = (service) => {
   return (dispatch) => {
     axios
-      .post("http://localhost:5000/addService", service)
+      .post("https://rocky-thicket-50900.herokuapp.com/addService", service)
       .then((res) => {
         dispatch(addService(res.data));
       })
@@ -65,7 +65,7 @@ export const getAddedService = (service) => {
 export const getAddedOrder = (order) => {
   return (dispatch) => {
     axios
-      .post("http://localhost:5000/addOrder", order)
+      .post("https://rocky-thicket-50900.herokuapp.com/addOrder", order)
       .then((res) => {
         if (res.data) {
           dispatch(addOrder(res.data));
@@ -81,7 +81,7 @@ export const getAddedOrder = (order) => {
 export const getLoadedService = () => {
   return (dispatch) => {
     axios
-      .get("http://localhost:5000/service")
+      .get("https://rocky-thicket-50900.herokuapp.com/service")
       .then((res) => {
         // console.log(res?.data?.count);
         dispatch(loadService(res?.data?.post));
@@ -102,7 +102,7 @@ export const getLoadedService = () => {
 // export const getLoadedPage = () => {
 //   return (dispatch) => {
 //     axios
-//       .get("http://localhost:5000/service")
+//       .get("https://rocky-thicket-50900.herokuapp.com/service")
 //       .then((res) => {
 //         console.log(res?.data?.post);
 //         const count = res?.data?.count;
@@ -120,7 +120,7 @@ export const getLoadedService = () => {
 export const getSingleService = (id) => {
   return (dispatch) => {
     axios
-      .get(`http://localhost:5000/services/${id}`)
+      .get(`https://rocky-thicket-50900.herokuapp.com/services/${id}`)
       .then((res) => {
         dispatch(loadSingleService(res.data));
       })
@@ -133,7 +133,7 @@ export const getSingleService = (id) => {
 export const getAddedReview = (review) => {
   return (dispatch) => {
     axios
-      .post("http://localhost:5000/addReview", review)
+      .post("https://rocky-thicket-50900.herokuapp.com/addReview", review)
       .then((res) => {
         dispatch(addReview(res.data));
       })
